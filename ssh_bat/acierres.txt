@@ -1,0 +1,12 @@
+option batch abort
+option confirm off
+open sftp://%2%@gpomonse.dyndns.org/ -privatekey="C:\scp\config\%2%.ppk" -hostkey="*" -rawsettings Compression=1
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\cierre\*" /rest/%1%/csv/cierre/
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\inventario\*" /rest/%1%/csv/inventario/
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\items\*" /rest/%1%/csv/items/
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\recetas\*" /rest/%1%/csv/recetas/
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\ingredientes\*" /rest/%1%/csv/ingredientes/
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\catalogo\*" /rest/%1%/csv/catalogo/
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\compras\*" /rest/%1%/csv/compras/
+put -filemask=*.csv.gz -nopermissions -nopreservetime -delete "C:\scp\acierres\enviar\desperdicio\*" /rest/%1%/csv/desperdicio/
+exit
